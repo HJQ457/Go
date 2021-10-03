@@ -36,5 +36,5 @@ func main() {
 
 	//测试byte范围
 	var c byte = 255
-	fmt.Println("c=", c)
+	fmt.Println("c= ", c)
 }
