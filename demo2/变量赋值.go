@@ -2,6 +2,18 @@ package main
 
 import "fmt"
 
+//定义全局变量方式1
+var m1 = 100
+var m2 = 200
+var name1 = "jack"
+
+//定义全局变量方式2
+var (
+	m3    = 100
+	m4    = 200
+	name2 = "jack"
+)
+
 func main() {
 	//golang变量使用方式1
 	//1.指定变量类型，声明后不赋值，使用默认值
@@ -29,4 +41,8 @@ func main() {
 	//一次声明多个变量3
 	n7, n8, n9 := 100, "tom", 888
 	fmt.Println("n7=", n7, "n8=", n8, "n9=", n9)
+
+	//输出全局变量
+	fmt.Println("m1=", m1, "m2=", m2, "name1=", name1)
+	fmt.Println("m3=", m3, "m4=", m4, "name2=", name2)
 }
