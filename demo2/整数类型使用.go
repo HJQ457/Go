@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"unsafe"
+)
 
 func main() {
 	var i int = 1
@@ -37,4 +40,13 @@ func main() {
 	//测试byte范围
 	var c byte = 255
 	fmt.Println("c=", c)
+
+	//整型的使用细节，格式化输出
+	var n1 int = 100
+	fmt.Printf("n1 的类型 %T \n", n1)
+
+	//查看变量字节占用大小和数据类型
+	var n2 int64 = 10
+	//unsafe.Sizeof() 是unsafe包的一个函数，可以返回变量占用的字节数
+	fmt.Printf("n2 的数据类型 %T，n2的字节占用数是 %d", n2, unsafe.Sizeof(n2))
 }
