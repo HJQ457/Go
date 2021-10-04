@@ -18,5 +18,9 @@ func main() {
 	fmt.Printf("c3=%c , c3对应的码值是%d \n", c3, c3)
 
 	var c4 int = 22269
-	fmt.Printf("c4=%c", c4)
+	fmt.Printf("c4=%c \n", c4)
+
+	//字符类型可以进行运算，相当于一个整数，运算按照码值进行
+	var n1 = 10 + 'a'
+	fmt.Println("n1=", n1)
 }
