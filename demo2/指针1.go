@@ -21,7 +21,8 @@ func main() {
 	fmt.Printf("num address=%v\n", &num)
 
 	var ptr1 *int = &num
-	ptr1 = &num
+	fmt.Printf("num=%v\n", num)
+	//ptr1 = &num
 	*ptr1 = 10
 	fmt.Printf("num=%v\n", num)
 }
