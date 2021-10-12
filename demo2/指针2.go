@@ -13,3 +13,7 @@ func main() {
 
 	fmt.Printf("a=%v,b=%v,*ptr=%v\n", a, b, *ptr)
 }
+
+//栈区：值类型数据
+
+//堆区：引用类型
