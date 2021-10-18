@@ -22,4 +22,15 @@ func main() {
 	fmt.Println("i=", i)
 	i--
 	fmt.Println("i=", i)
+
+	//golang中，++和--只能独立使用
+	//golang中没有++i这种
+
+	var j int = 8
+	var k int
+
+	//k = j++
+	j++
+	k = j
+	fmt.Println("k =", k)
 }
