@@ -28,5 +28,6 @@ func main() {
 		fmt.Println("ok3")
 	default:
 		fmt.Println("no")
+
 	}
 }
