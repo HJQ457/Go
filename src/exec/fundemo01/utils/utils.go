@@ -4,6 +4,8 @@ import (
 	"fmt"
 )
 
+var Num1 int = 300
+
 //函数名大写，类似其他语言的public
 func Cal(n1 float64, n2 float64, operator byte) float64 {
 
