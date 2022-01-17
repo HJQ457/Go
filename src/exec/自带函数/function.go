@@ -91,4 +91,8 @@ func main() {
 	str15 := strings.Trim("! hello! ", " !")
 	fmt.Printf("删除指定字符：%q\n", str15)
 
+	//18.判断字符串是否以指定的字符串开头
+	b1 := strings.HasPrefix("ftp://92.168.0.1", "ftp")
+	fmt.Printf("是否以ftp开头：%v\n", b1)
+
 }
