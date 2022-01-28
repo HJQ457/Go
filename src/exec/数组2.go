@@ -7,6 +7,11 @@ func main() {
 	fmt.Println("arr=", arr)
 
 	test01()
+	test02(arr)
+	fmt.Println("main arr=", arr)
+
+	test04(&arr)
+	fmt.Println("main arr=", arr)
 }
 
 func test01() {
@@ -17,4 +22,13 @@ func test01() {
 	arr5 := [...]int{1, 2, 3, 4, 5} //不指定长度，对数组赋以5个值
 	arr6 := [...]int{8: 1}          //不指定长度，对第9个元素（下标为8）赋值1
 	fmt.Println(arr1, arr2, arr3, arr4, arr5, arr6)
+}
+
+func test02(arr [3]int) {
+	arr[0] = 88
+}
+
+func test04(arr *[3]int) {
+	fmt.Printf("arr 的指针地址是 %p\n", &arr)
+	(*arr)[0] = 88
 }
