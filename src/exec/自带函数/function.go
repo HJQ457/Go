@@ -14,7 +14,7 @@ func main() {
 
 	str2 := "hello北京"
 
-	//2.字符串遍历，处理中午问题 r := []rune(str)
+	//2.字符串遍历，处理中文问题 r := []rune(str)
 	str3 := []rune(str2)
 	for i := 0; i < len(str3); i++ {
 		fmt.Printf("字符 = %c\n", str3[i])
