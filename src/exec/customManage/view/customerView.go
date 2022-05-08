@@ -55,6 +55,42 @@ func (this *customerView) add() {
 	}
 }
 
+//得到用户输入的id，删除该id对应的客户
+func (this *customerView) delete() {
+	fmt.Println("-------------删除客户-------------")
+	fmt.Println("请选择删除的客户编号(-1退出)：")
+	id := -1
+	fmt.Scanln(&id)
+	if id == -1 {
+		return //放弃删除操作
+	}
+	fmt.Println("确认是否删除（Y/N）：")
+	choice := ""
+	fmt.Scanln(&choice)
+	if choice == "y" || choice == "Y" {
+		if this.customerService.Delete(id) {
+			fmt.Println("-------------删除完成-------------")
+		} else {
+			fmt.Println("------删除失败，输入的id号不存在------")
+		}
+	}
+}
+
+//退出软件
+func (this *customerView) exit() {
+	fmt.Println("确认是否退出（Y/N）：")
+	for {
+		fmt.Scanln(&this.key)
+		if this.key == "y" || this.key == "Y" || this.key == "N" || this.key == "n" {
+			break
+		}
+		fmt.Println("您的输入有误，确认是否退出（Y/N）：")
+	}
+	if this.key == "y" || this.key == "Y" {
+		this.loop = false
+	}
+}
+
 //显示主菜单
 func (this *customerView) mainMenu() {
 	for {
@@ -73,11 +109,12 @@ func (this *customerView) mainMenu() {
 		case "2":
 			fmt.Println("2")
 		case "3":
-			fmt.Println("3")
+			this.delete()
 		case "4":
 			this.List()
 		case "5":
-			this.loop = false
+			//this.loop = false
+			this.exit()
 		default:
 			fmt.Println("您的输入有误，请重新输入")
 		}
