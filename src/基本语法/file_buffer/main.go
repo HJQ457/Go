@@ -27,6 +27,5 @@ func main() {
 		//输出内容
 		fmt.Print(str)
 	}
-
 	fmt.Println("文件读取结束")
 }
