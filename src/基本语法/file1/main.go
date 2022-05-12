@@ -13,6 +13,7 @@ func main() {
 
 	//输出文件
 	fmt.Println(file)
+
 	err = file.Close()
 
 	if err != nil {
