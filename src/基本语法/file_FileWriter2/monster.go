@@ -12,7 +12,7 @@ func main() {
 	filepath := "D:\\gocode\\src\\基本语法\\file_FileWriter2\\text.txt"
 
 	//覆盖写
-	file1, err := os.OpenFile(filepath, os.O_WRONLY|os.O_TRUNC, 06666)
+	file1, err := os.OpenFile(filepath, os.O_WRONLY|os.O_TRUNC, 0666)
 	if err != nil {
 		fmt.Println("open file err = %v", err)
 	}
