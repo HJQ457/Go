@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io"
 	"net"
 )
 
@@ -12,10 +11,10 @@ func process(conn net.Conn) {
 	defer conn.Close()
 
 	for {
-		fmt.Printf("服务器在等待客户端%s发送信息", conn.RemoteAddr().String())
+		//fmt.Printf("服务器在等待客户端%s发送信息\n", conn.RemoteAddr().String())
 		buf := make([]byte, 1024)
 		read, err3 := conn.Read(buf)
-		if err3 == io.EOF {
+		if err3 != nil {
 			fmt.Println("客户端退出")
 			return
 		}
