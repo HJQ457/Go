@@ -6,6 +6,7 @@ import (
 	"exec/chat_room/common"
 	"fmt"
 	"net"
+	"time"
 )
 
 //写一个函数，完成登录
@@ -61,9 +62,21 @@ func login(userId int, userPwd string) (err error) {
 	//发送长度
 	n, conn_byte_err := conn.Write(buf[:4])
 	if n != 4 || conn_byte_err != nil {
-		return conn_byte_err
+		fmt.Println("conn.Write fail", conn_byte_err)
+		return
 	}
-	fmt.Printf("客户端，发送长度=%d，内容是=%s", len(data), string(data))
+	//fmt.Printf("客户端，发送长度=%d，内容是=%s", len(data), string(data))
+
+	//发送消息本身
+	_, conn_write_data := conn.Write(data)
+	if conn_write_data != nil {
+		fmt.Println("conn.Write(data) err=", conn_write_data)
+		return
+	}
+
+	//休眠10s
+	time.Sleep(20 * time.Second)
+	fmt.Println("休眠了10s")
 
 	return
 }
