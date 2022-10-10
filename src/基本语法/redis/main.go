@@ -87,4 +87,18 @@ func main() {
 	for i := 0; i < len(hm); i++ {
 		fmt.Printf("hm[%v]=%v\n", i, hm[i])
 	}
+
+	//获取所有key
+	values, value_err := redis.Values(conn.Do("keys", "*"))
+	if value_err != nil {
+		return
+	}
+
+	for i := 0; i < len(values); i++ {
+		fmt.Println(string(values[i].([]byte)))
+	}
+
+	for _, v := range values {
+		fmt.Printf(string(v.([]byte)))
+	}
 }
